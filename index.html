@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCE Yogyakarta | Education for Sustainable Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 20px;
+      width: 4px; height: 100%;
+      background: linear-gradient(to bottom, #2563eb, #60a5fa);
+    }
+    .timeline-item {
+      position: relative;
+      margin-left: 60px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 20px; left: -40px;
+      width: 20px; height: 20px;
+      background: #1c4ebb;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #2958be;
+    }
+    .gallery img, .project-card img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover, .project-card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">RCE Yogyakarta</h1>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#about" class="hover:text-blue-600">Tentang</a>
+        <a href="#activities" class="hover:text-blue-600">Kegiatan</a>
+        <a href="#timeline" class="hover:text-blue-600">Timeline</a>
+        <a href="#awards" class="hover:text-blue-600">Penghargaan</a>
+        <a href="#vision" class="hover:text-blue-600">Visi Misi</a>
+        <a href="#gallery" class="hover:text-blue-600">Galeri</a>
+        <a href="#projects" class="hover:text-blue-600">Proyek</a>
+        <a href="#news" class="hover:text-blue-600">Berita</a>
+        <a href="#communities" class="hover:text-blue-600">Komunitas</a>
+        <a href="#contact" class="hover:text-blue-600">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-blue-600 via-blue-400 to-white text-white px-6">
+    <div class="animate-fadeIn">
+      <h2 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Education for Sustainable Development</h2>
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-6">Bekerja bersama komunitas membangun pendidikan berkelanjutan melalui pengabdian masyarakat.</p>
+      <a href="#about" class="bg-white text-blue-700 px-8 py-4 rounded-full shadow font-semibold hover:bg-blue-50 hover:scale-105 transition-transform duration-200">Jelajahi</a>
+    </div>
+  </section>
+  <style>@keyframes fadeIn{from{opacity:0}to{opacity:1}}.animate-fadeIn{animation:fadeIn 1.2s}</style>
+
+  <!-- Tentang -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-3xl font-bold text-center mb-8">About RCE Yogyakarta</h3>
+    <p class="text-lg leading-relaxed text-gray-700 text-justify">Regional Center of Expertise (RCE) Yogyakarta merupakan jejaring organisasi pendidikan formal, non-formal, dan informal yang bertujuan memberikan pendidikan untuk pembangunan berkelanjutan (ESD) kepada masyarakat lokal. Sejak berdiri tahun 2007, RCE Yogyakarta aktif mengembangkan berbagai program berbasis komunitas bersama UGM, pemerintah, dan masyarakat.</p>
+    <div class="mt-8 flex justify-center">
+      <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/Desain%20tanpa%20judul.png" alt="RCE Yogyakarta" class="rounded-xl shadow">
+    </div>
+  </section>
+
+<!-- Kegiatan Carousel -->
+<section id="activities" class="bg-white py-16 px-0">
+  <h3 class="text-3xl font-bold text-center mb-8">Kilas Balik Kegiatan</h3>
+  <div class="overflow-hidden w-full">
+    <div id="carousel" class="flex transition-transform duration-700 ease-in-out w-full">
+      <!-- Card 1 -->
+      <div class="min-w-full bg-white p-6 rounded-xl shadow mx-2 flex-shrink-0 flex flex-col items-center">
+        <img src="https://source.unsplash.com/1200x500/?seminar,education" alt="Kegiatan 2007-2010" class="rounded mb-4 w-full object-cover">
+        <h4 class="text-xl font-semibold mb-2">2007 - 2010</h4>
+        <p class="text-gray-600 text-center">Inisiasi RCE, sosialisasi ESD, konferensi Asia Pasifik, serta kolaborasi internasional awal.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="min-w-full bg-white p-6 rounded-xl shadow mx-2 flex-shrink-0 flex flex-col items-center">
+        <img src="https://source.unsplash.com/1200x500/?workshop,community" alt="Kegiatan 2011-2015" class="rounded mb-4 w-full object-cover">
+        <h4 class="text-xl font-semibold mb-2">2011 - 2015</h4>
+        <p class="text-gray-600 text-center">Workshop EfSD, konferensi global di Brazil & Kenya, YUVA Meet India, hingga Konferensi Pemuda Indonesia.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="min-w-full bg-white p-6 rounded-xl shadow mx-2 flex-shrink-0 flex flex-col items-center">
+        <img src="https://source.unsplash.com/1200x500/?conference,global" alt="Kegiatan 2016-2025" class="rounded mb-4 w-full object-cover">
+        <h4 class="text-xl font-semibold mb-2">2016 - 2025</h4>
+        <p class="text-gray-600 text-center">Tuan rumah Global RCE Conference ke-10, program SDGs Youth Challenge, penghargaan internasional, serta Smart Agro-Edu Tourism.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+const carousel = document.getElementById('carousel');
+const cards = carousel.children;
+const total = cards.length;
+let currentIndex = 0;
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Auto-slide setiap 3 detik, looping terus
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % total;
+  updateCarousel();
+}, 3000);
+
+// Inisialisasi posisi awal
+updateCarousel();
+</script>
+
+
+  <!-- Timeline -->
+  <section id="timeline" class="max-w-6xl mx-auto px-6 py-16 relative">
+    <h3 class="text-3xl font-bold text-center mb-8">Kilas Perjalanan</h3>
+    <div class="timeline relative space-y-12">
+      <div class="timeline-item">
+        <h4 class="text-xl font-semibold text-blue-700">2007</h4>
+        <p class="text-gray-600">Peresmian RCE Yogyakarta di UGM oleh UNU-IAS Jepang, awal komitmen implementasi ESD di Indonesia.</p>
+        <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/Desain%20tanpa%20judul%20(1).png" alt="2007" class="rounded mt-3">
+      </div>
+      <div class="timeline-item">
+        <h4 class="text-xl font-semibold text-blue-700">2011</h4>
+        <p class="text-gray-600">UGM menjadi tuan rumah Asia Pacific RCE Conference, melahirkan Yogyakarta Action Plan.</p>
+        <img src="https://source.unsplash.com/800x400/?conference,asia" alt="2011" class="rounded mt-3">
+      </div>
+      <div class="timeline-item">
+        <h4 class="text-xl font-semibold text-blue-700">2016</h4>
+        <p class="text-gray-600">Konferensi Global RCE ke-10 di Yogyakarta, dihadiri lebih dari 250 peserta dari 40 negara.</p>
+        <img src="https://source.unsplash.com/800x400/?global,meeting" alt="2016" class="rounded mt-3">
+      </div>
+      <div class="timeline-item">
+        <h4 class="text-xl font-semibold text-blue-700">2023</h4>
+        <p class="text-gray-600">Penghargaan Outstanding Flagship Project: Smart Integrated Education System of Agrotourism Community Services.</p>
+        <img src="https://source.unsplash.com/800x400/?award,success" alt="2023" class="rounded mt-3">
+      </div>
+      <div class="timeline-item">
+        <h4 class="text-xl font-semibold text-blue-700">2025</h4>
+        <p class="text-gray-600">Penerbitan Buku Kegiatan RCE Yogyakarta 2007–2025 sebagai dokumentasi perjalanan ESD.</p>
+        <img src="https://source.unsplash.com/800x400/?book,publication" alt="2025" class="rounded mt-3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Penghargaan -->
+<section id="awards" class="max-w-6xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-bold text-center mb-8">Penghargaan RCE Yogyakarta</h3>
+  <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+    <li><strong>2007:</strong> Certificate of Acknowledgement RCE Yogyakarta</li>
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/Desain%20tanpa%20judul%20(2).png" alt="Certificate of Acknowledgement RCE Yogyakarta" class="w-full h-auto object-cover rounded-xl shadow" onclick="showLightbox(this.src)" />
+    <li><strong>2012:</strong> RCE Recognition Award – Biodiversity & Conservation</li>
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/2.png" alt="RCE Recognition Award – Biodiversity & Conservation" class="w-full h-auto object-cover rounded-xl shadow-lg" onclick="showLightbox(this.src)" />
+    <li><strong>2016:</strong> ESD Okayama Award Global Prize</li>
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/8.png" alt="ESD Okayama Award Global Prize" class="w-full h-auto object-cover rounded-xl shadow-lg" onclick="showLightbox(this.src)" />
+    <li><strong>2018:</strong> Outstanding Flagship Project – Asia Pacific SDG Youth Challenge</li>
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/9.png" alt="Outstanding Flagship Project – Asia Pacific SDG Youth Challenge" class="w-full h-auto object-cover rounded-xl shadow-lg" onclick="showLightbox(this.src)" />
+    <li><strong>2023:</strong> Smart Integrated Agro-Edu Tourism Project</li>
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/11.png" alt="Smart Integrated Agro-Edu Tourism Project" class="w-full h-auto object-cover rounded-xl shadow-lg" onclick="showLightbox(this.src)" />
+    <li><strong>2024:</strong> Integrating Digital Technological Innovations for Climate-Smart Agro-Edu Tourism</li>
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/14.png" alt="Integrating Digital Technological Innovations for Climate-Smart Agro-Edu Tourism" class="w-full h-auto object-cover rounded-xl shadow-lg" onclick="showLightbox(this.src)" />
+  </ul>
+</section>
+
+  <!-- Visi Misi -->
+  <section id="vision" class="bg-gray-100 py-16 px-6">
+    <h3 class="text-3xl font-bold text-center mb-8">Visi & Misi</h3>
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="mb-4 text-lg"><strong>Visi:</strong> Menjadi pusat yang peduli dan proaktif dalam penyelamatan dunia dari kerusakan.</p>
+      <p class="mb-4 text-lg"><strong>Misi:</strong> Mengembangkan konsep dan teknologi pembangunan berkelanjutan serta mengimplementasikannya berbasis komunitas.</p>
+      <p class="text-lg"><strong>Tujuan:</strong> Memberikan edukasi formal, non-formal, dan informal di bidang ESD; meningkatkan kesadaran masyarakat; serta aktif dalam kerjasama nasional & internasional.</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="max-w-6xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-bold text-center mb-8">Galeri Kegiatan</h3>
+  <div class="gallery grid md:grid-cols-3 gap-6">
+    <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/sertif%20rce.png" alt="Sertifikat" class="w-full h-auto object-cover rounded-xl shadow" />
+    <img src="https://source.unsplash.com/600x400/?community,people" alt="Pengabdian Masyarakat" class="w-full h-auto object-cover rounded-xl shadow" />
+    <img src="https://source.unsplash.com/600x400/?university,students" alt="Mahasiswa UGM" class="w-full h-auto object-cover rounded-xl shadow" />
+    <!-- ... -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+  <img id="lightboxImg" src="" class="w-full max-w-3xl rounded-xl" />
+</div>
+  </div>
+</section>
+
+  <!-- Proyek Unggulan -->
+  <section id="projects" class="bg-gray-100 py-16 px-6">
+    <h3 class="text-3xl font-bold text-center mb-8">Proyek Unggulan</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="project-card bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/sertif%20rce.png" alt="Biodiversity" class="rounded mb-4">
+        <h4 class="text-xl font-semibold mb-2">Biodiversity & Conservation</h4>
+        <p class="text-gray-600">Program konservasi biodiversitas lokal dengan melibatkan masyarakat desa dalam perlindungan ekosistem.</p>
+      </div>
+      <div class="project-card bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/600x300/?agriculture,technology" alt="Smart Agro" class="rounded mb-4">
+        <h4 class="text-xl font-semibold mb-2">Smart Agro-Edu Tourism</h4>
+        <p class="text-gray-600">Integrasi pendidikan, pariwisata, dan teknologi pertanian cerdas berbasis masyarakat.</p>
+      </div>
+      <div class="project-card bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/600x300/?youth,leadership" alt="Youth Challenge" class="rounded mb-4">
+        <h4 class="text-xl font-semibold mb-2">Youth SDG Challenge</h4>
+        <p class="text-gray-600">Gerakan pemuda dalam mewujudkan Tujuan Pembangunan Berkelanjutan (SDGs) melalui aksi nyata.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="news" class="max-w-6xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-bold text-center mb-8">Berita Terbaru</h3>
+  <div class="grid md:grid-cols-3 gap-6">
+    <!-- Berita 1 -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer" onclick="openNewsModal(1)">
+      <img src="https://source.unsplash.com/600x300/?news,education" alt="Berita 1" class="rounded mb-4">
+      <h4 class="text-xl font-semibold mb-2">RCE Yogyakarta Gelar Seminar ESD 2024</h4>
+      <p class="text-gray-600 mb-2">Seminar bertema pendidikan berkelanjutan dihadiri oleh berbagai komunitas dan akademisi.</p>
+      <span class="text-sm text-gray-500">15 Juni 2024</span>
+    </div>
+    <!-- Berita 2 -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer" onclick="openNewsModal(2)">
+      <img src="https://source.unsplash.com/600x300/?community,project" alt="Berita 2" class="rounded mb-4">
+      <h4 class="text-xl font-semibold mb-2">Proyek Agro-Edu Tourism Raih Penghargaan</h4>
+      <p class="text-gray-600 mb-2">Program inovasi pertanian cerdas mendapat apresiasi di tingkat nasional.</p>
+      <span class="text-sm text-gray-500">28 Mei 2024</span>
+    </div>
+    <!-- Berita 3 -->
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-pointer" onclick="openNewsModal(3)">
+      <img src="https://source.unsplash.com/600x300/?students,activity" alt="Berita 3" class="rounded mb-4">
+      <h4 class="text-xl font-semibold mb-2">Mahasiswa UGM Ikuti Youth SDG Challenge</h4>
+      <p class="text-gray-600 mb-2">Puluhan mahasiswa terlibat dalam aksi nyata pembangunan berkelanjutan.</p>
+      <span class="text-sm text-gray-500">10 Mei 2024</span>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Detail Berita -->
+<div id="newsModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-xl p-8 max-w-xl w-full relative">
+    <button onclick="closeNewsModal()" class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-blue-700">&times;</button>
+    <img id="newsModalImg" src="" class="rounded mb-4 w-full" alt="News Image">
+    <h4 id="newsModalTitle" class="text-xl font-bold mb-2"></h4>
+    <span id="newsModalDate" class="text-sm text-gray-500 block mb-2"></span>
+    <p id="newsModalDesc" class="text-gray-700"></p>
+  </div>
+</div>
+  <script>
+  const newsData = [
+    {
+      img: "https://source.unsplash.com/600x300/?news,education",
+      title: "RCE Yogyakarta Gelar Seminar ESD 2024",
+      date: "15 Juni 2024",
+      desc: "Seminar ESD 2024 diselenggarakan oleh RCE Yogyakarta di kampus UGM, menghadirkan pembicara nasional dan internasional. Topik utama adalah integrasi pendidikan berkelanjutan dalam kurikulum sekolah dan perguruan tinggi. Acara ini diikuti lebih dari 200 peserta, terdiri dari guru, dosen, mahasiswa, dan komunitas lokal yang berkomitmen terhadap pembangunan berkelanjutan. Seminar diakhiri dengan penandatanganan MoU kolaborasi antar lembaga pendidikan."
+    },
+    {
+      img: "https://source.unsplash.com/600x300/?community,project",
+      title: "Proyek Agro-Edu Tourism Raih Penghargaan",
+      date: "28 Mei 2024",
+      desc: "Smart Agro-Edu Tourism merupakan inovasi pariwisata berbasis pendidikan dan teknologi pertanian cerdas, dikembangkan oleh RCE Yogyakarta bersama mitra desa. Program ini berhasil meningkatkan pendapatan masyarakat sekaligus edukasi pengunjung tentang pertanian berkelanjutan, konservasi air, dan pemanfaatan teknologi IoT. Penghargaan nasional diberikan sebagai bentuk apresiasi atas dampak positif di bidang sosial, ekonomi, dan lingkungan."
+    },
+    {
+      img: "https://source.unsplash.com/600x300/?students,activity",
+      title: "Mahasiswa UGM Ikuti Youth SDG Challenge",
+      date: "10 Mei 2024",
+      desc: "Puluhan mahasiswa dari UGM dan universitas lain di Yogyakarta berpartisipasi dalam Youth SDG Challenge 2024. Mereka mengembangkan proyek sosial, lingkungan, dan pendidikan di berbagai wilayah. Kegiatan ini mendorong pemuda untuk aktif berkontribusi pada pencapaian SDGs melalui aksi nyata seperti edukasi masyarakat, penghijauan, dan pengelolaan sampah."
+    }
+  ];
+  function openNewsModal(idx) {
+    const news = newsData[idx-1];
+    document.getElementById('newsModalImg').src = news.img;
+    document.getElementById('newsModalTitle').innerText = news.title;
+    document.getElementById('newsModalDate').innerText = news.date;
+    document.getElementById('newsModalDesc').innerText = news.desc;
+    document.getElementById('newsModal').style.display = 'flex';
+  }
+  function closeNewsModal() {
+    document.getElementById('newsModal').style.display = 'none';
+  }
+</script>
+
+<!-- Komunitas yang Mengikuti -->
+<section id="communities" class="max-w-6xl mx-auto px-6 py-16">
+  <h3 class="text-3xl font-bold text-center mb-10">Komunitas yang Mengikuti</h3>
+  <div class="flex flex-wrap justify-center items-center gap-10">
+    <!-- Komunitas 1 -->
+    <div class="flex flex-col items-center">
+      <div class="bg-white rounded-full shadow-lg p-4 animate-spin-slow">
+        <img src="https://uploads.onecompiler.io/43w9rf9r9/43w9qgr79/Desain%20tanpa%20judul.png" alt="UGM" class="w-20 h-20 object-contain" />
+      </div>
+      <span class="mt-3 font-semibold text-gray-700">UGM</span>
+    </div>
+    <!-- Komunitas 2 -->
+    <div class="flex flex-col items-center">
+      <div class="bg-white rounded-full shadow-lg p-4 animate-spin-slow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Logo_Kabupaten_Sleman.png" alt="Sleman" class="w-20 h-20 object-contain" />
+      </div>
+      <span class="mt-3 font-semibold text-gray-700">Kab. Sleman</span>
+    </div>
+    <!-- Komunitas 3 -->
+    <div class="flex flex-col items-center">
+      <div class="bg-white rounded-full shadow-lg p-4 animate-spin-slow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Logo_Kota_Yogyakarta.png" alt="Kota Yogyakarta" class="w-20 h-20 object-contain" />
+      </div>
+      <span class="mt-3 font-semibold text-gray-700">Kota Yogyakarta</span>
+    </div>
+    <!-- Komunitas 4 -->
+    <div class="flex flex-col items-center">
+      <div class="bg-white rounded-full shadow-lg p-4 animate-spin-slow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Logo_Kabupaten_Bantul.png" alt="Kab. Bantul" class="w-20 h-20 object-contain" />
+      </div>
+      <span class="mt-3 font-semibold text-gray-700">Kab. Bantul</span>
+    </div>
+    <!-- Tambahkan komunitas lain sesuai kebutuhan -->
+  </div>
+</section>
+
+  <!-- Kontak -->
+  <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-3xl font-bold text-center mb-8">Kontak</h3>
+    <div class="text-center">
+      <p class="text-lg mb-2">Sekretariat RCE Yogyakarta</p>
+      <p class="text-gray-700">Direktorat Pengabdian kepada Masyarakat UGM</p>
+      <p class="text-gray-700">Bulaksumur, Sleman, Yogyakarta</p>
+      <p class="mt-4">📧 Email: <a href="mailto:rce@ugm.ac.id" class="text-blue-600 hover:underline">rce@ugm.ac.id</a></p>
+    </div>
+  </section>
+
+<!-- Footer -->
+  <footer class="bg-blue-700 text-white text-center py-6">
+    <p>&copy; 2025 RCE Yogyakarta - Education for Sustainable Development</p>
+  </footer>
+</body>
+</html>
